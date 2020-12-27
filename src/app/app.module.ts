@@ -1,6 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Servicios
+import { PedidosService } from './services/pedido.service';
+
+
+// Routes
+import { app_routing } from './app.routes';
 
 
 // Components
@@ -17,9 +23,12 @@ import { HomeComponent } from './components/home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    app_routing
   ],
-  providers: [],
+  providers: [
+    PedidosService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
