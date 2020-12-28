@@ -4,7 +4,20 @@
             <a [routerLink]="['home']">Home</a>
         </li>
         <li routerLinkActive="active">
+            <a [routerLink]="['productos']">productos</a>
+        </li>
+        <li routerLinkActive="active">
             <a [routerLink]="['pedidos']">Pedidos</a>
         </li>
     </ul>
+</div>
+<div class="pedido">
+    <div class="pedido_container">
+        <p>{{ nombre }}</p>
+        <p *ngFor="let item of productos">{{item.cantidad}} {{item.tipo}} {{item.masa}} {{item.peso}}g {{item.precio *
+            item.cantidad}}€
+        </p>
+    </div>
+
+    <input type="submit" value="confirmar Pedido">
 </div>

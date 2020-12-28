@@ -14,13 +14,15 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { HomeComponent } from './components/home/home.component';
+import { ProductosComponent } from './components/productos/productos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     PedidosComponent,
-    HomeComponent
+    HomeComponent,
+    ProductosComponent
   ],
   imports: [
     BrowserModule,

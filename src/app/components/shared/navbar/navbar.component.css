@@ -11,3 +11,22 @@
 .active a{
     color: green;
 }
+.pedido{
+    position: absolute;
+    right: 0;
+    max-height: 80%;
+    margin-top: 20vh;
+    background-color: blue;
+    color: white;
+    
+}
+
+.pedido_container{
+    margin: 2rem;
+}
+
+.pedido input{
+    width: 60%;
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+}
