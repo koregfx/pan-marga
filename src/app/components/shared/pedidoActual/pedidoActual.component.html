@@ -1,0 +1,10 @@
+<div class="pedido">
+    <div class="pedido_container">
+        <p>{{ nombre }}</p>
+        <p *ngFor="let item of productos">{{item.cantidad}} {{item.tipo}} {{item.masa}} {{item.peso}}g {{item.precio *
+            item.cantidad}}€
+        </p>
+    </div>
+
+    <input type="submit" value="confirmar Pedido">
+</div>

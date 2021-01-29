@@ -15,6 +15,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/productos/productos.component';
+import { PedidoActualComponent } from './components/shared/pedidoActual/pedidoActual.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductosComponent } from './components/productos/productos.component';
     NavbarComponent,
     PedidosComponent,
     HomeComponent,
-    ProductosComponent
+    ProductosComponent,
+    PedidoActualComponent
   ],
   imports: [
     BrowserModule,

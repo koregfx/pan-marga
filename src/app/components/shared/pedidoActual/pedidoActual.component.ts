@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { PedidosService, Pan, Pedido } from '../../../services/pedido.service';
+import { Component, OnInit, Input } from "@angular/core";
+import { Pan, Pedido, PedidosService } from "src/app/services/pedido.service";
+
+
+
+
 
 @Component({
-    selector: 'app-navbar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['navbar.component.css']
+    selector: 'app-pedido-actual',
+    templateUrl: 'pedidoActual.component.html',
+    styleUrls: ['pedidoActual.component.css']
 })
-export class NavbarComponent implements OnInit {
-    nombre: string;
-    productos: Pan[] = [
+export class PedidoActualComponent implements OnInit {
+    @Input() nombre = 'hola';
+    @Input() productos: Pan[] = [
         {
             tipo: 'bocadillo',
             peso: 90,
@@ -17,7 +21,7 @@ export class NavbarComponent implements OnInit {
             cantidad: 2
         }
     ];
-    pedido: Pedido;
+    @Input() pedido: Pedido;
     getNombre(): void {
 
         if (this.pedido) {
@@ -44,6 +48,8 @@ export class NavbarComponent implements OnInit {
     constructor(private _pedidoService: PedidosService) { }
 
     ngOnInit() {
+        console.log(this.nombre);
+
         this.actualizarData();
     }
 }
