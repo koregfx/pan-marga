@@ -9,20 +9,11 @@ export class PedidosService {
             precio: 0.45,
             cantidad: 0,
             masa: 'viena'
-        },
-        {
-            tipo: 'bocadillo',
-            peso: 120,
-            precio: 0.55,
-            masa: 'viena',
-            cantidad: 0
         }
     ];
     private pedidos: Pedido[];
 
-    private pedidoActual: Pedido =
-        {
-        };
+    private pedidoActual: Pedido = {};
 
     constructor() {
         console.log('servicio de Pedidos listo para usar');
@@ -31,22 +22,25 @@ export class PedidosService {
         return this.panes;
     }
     getPedidoActual(): Pedido {
+        console.log(this.pedidoActual);
         return this.pedidoActual;
     }
     setpedidoName(name: string): void {
         this.pedidoActual.nombre = name;
-        console.log(this.pedidoActual);
     }
     sendPedido(pedido: Pedido): void {
         this.pedidoActual = pedido;
         this.pedidos.push(this.pedidoActual);
+    }
+    setPedidoDate(date: string): void {
+        this.pedidoActual.fecha = date;
     }
 }
 
 
 export interface Pedido {
     nombre?: string;
-    fecha?: Date;
+    fecha?: string;
     pan?: Pan[];
 }
 

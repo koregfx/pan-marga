@@ -7,7 +7,9 @@
     color: white;
     
 }
-
+.alerta{
+    color:red;
+}
 .pedido_container{
     margin: 2rem;
 }

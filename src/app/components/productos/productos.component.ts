@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
+import { Pan, Pedido, PedidosService } from '../../services/pedido.service';
 
 
 @Component({
@@ -8,10 +8,11 @@ import { Router } from "@angular/router";
     styleUrls: ['productos.component.css']
 })
 export class ProductosComponent {
-
-    constructor(private router: Router) { }
-
-    EnviarTermino(termino: string): void {
-        this.router.navigate(['/home', termino]);
+    pedido: Pedido;
+    productos: Pan[];
+    constructor(private _pedidosService: PedidosService) {
+        this.pedido = _pedidosService.getPedidoActual();
+        this.productos = _pedidosService.getPanes();
+        console.log(this.productos);
     }
 }

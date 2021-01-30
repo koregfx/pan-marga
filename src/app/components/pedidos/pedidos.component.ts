@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { PedidosService } from '../../services/pedido.service';
 
 
 @Component({
@@ -8,7 +7,5 @@ import { PedidosService } from '../../services/pedido.service';
     styleUrls: ['pedidos.component.css']
 })
 export class PedidosComponent {
-    constructor(private _pedidosService: PedidosService) {
 
-    }
 }

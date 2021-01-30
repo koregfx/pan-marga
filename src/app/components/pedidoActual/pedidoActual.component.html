@@ -1,6 +1,8 @@
 <div class="pedido">
     <div class="pedido_container">
-        <p>{{ nombre }}</p>
+
+        <p>{{ pedido.nombre }}</p>
+        <p>{{ pedido.fecha }}</p>
         <p *ngFor="let item of productos">{{item.cantidad}} {{item.tipo}} {{item.masa}} {{item.peso}}g {{item.precio *
             item.cantidad}}€
         </p>
