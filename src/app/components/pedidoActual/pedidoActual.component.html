@@ -3,7 +3,8 @@
 
         <p>{{ pedido.nombre }}</p>
         <p>{{ pedido.fecha }}</p>
-        <p *ngFor="let item of productos">{{item.cantidad}} {{item.tipo}} {{item.masa}} {{item.peso}}g {{item.precio *
+        <p *ngFor="let item of this.pedido.pan">{{item.cantidad}} {{item.tipo}} {{item.masa}} {{item.peso}}g
+            {{item.precio *
             item.cantidad}}€
         </p>
     </div>

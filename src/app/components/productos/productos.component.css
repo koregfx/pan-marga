@@ -1,0 +1,39 @@
+
+.organizacion{
+    background-color: green;
+    width: 70%;
+    height: 5vh;
+    border-radius: 10px;
+    margin:  auto;
+    margin-top: 10px;
+    justify-content: space-around ;
+}
+
+.organizacion a{
+    cursor: pointer;
+}
+
+.main_container_pan{
+    width: 100%;
+    margin-top: 20px;
+}
+.pedidoActual_container{   
+    position: fixed;
+    right: 0;
+    max-height: 80%;
+    margin-top: 20vh;
+    background-color: blue;
+    color: white;
+}
+
+.products_panes{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 60%;
+    margin: auto;
+}
+
+.pan{
+    margin: 20px;
+}

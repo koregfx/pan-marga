@@ -1,0 +1,15 @@
+<div class="pan_container flexColum">
+    <div class="pan_name">
+        <p class="pan_tipo">{{pan.tipo}} {{pan.masa}}</p>
+        <p class="pan_peso">{{pan.peso}} g</p>
+    </div>
+    <div class="pan_cantidad">
+        <div class="flex">
+            <button (click)="addCantidad()">+</button>
+            <p class="pan_cantidad_value">{{pan.cantidad}}</p>
+            <button (click)="lessCantidad()">-</button>
+        </div>
+    </div>
+    <button class="pan_añadir" (click)="addPan()">Añadir</button>
+
+</div>

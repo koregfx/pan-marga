@@ -1,3 +1,24 @@
-<h1>ProductosComponent working fine</h1>
+<div class="">
+    <ul class="flex organizacion">
+        <li>
+            <a>Pan</a>
+        </li>
+        <li>
+            <a>Bolleria</a>
+        </li>
+        <li>
+            <a>Otros</a>
+        </li>
+    </ul>
+</div>
+<app-pedido-actual [pedido]="this.pedido" class="pedidoActual_container"></app-pedido-actual>
+<div class="main_container_pan flexColum">
 
-<app-pedido-actual [pedido]="this.pedido"></app-pedido-actual>
+
+
+    <h1>Pan</h1>
+    <div class="products_panes">
+        <app-pan class="pan" *ngFor="let pan of panes" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
+    </div>
+
+</div>

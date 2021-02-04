@@ -1,12 +1,3 @@
-.pedido{
-    position: absolute;
-    right: 0;
-    max-height: 80%;
-    margin-top: 20vh;
-    background-color: blue;
-    color: white;
-    
-}
 .alerta{
     color:red;
 }

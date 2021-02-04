@@ -16,6 +16,7 @@ import { PedidosComponent } from './components/pedidos/pedidos.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PedidoActualComponent } from './components/pedidoActual/pedidoActual.component';
+import { PanComponent } from './components/shared/pan/pan.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PedidoActualComponent } from './components/pedidoActual/pedidoActual.co
     PedidosComponent,
     HomeComponent,
     ProductosComponent,
-    PedidoActualComponent
+    PedidoActualComponent,
+    PanComponent
   ],
   imports: [
     BrowserModule,

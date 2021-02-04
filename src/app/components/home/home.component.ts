@@ -25,10 +25,13 @@ export class HomeComponent {
         } else {
             this.fecha = this.pedido.fecha;
         }
-
+        this.setNameAndDate(this.nombre, this.fecha);
     }
 
     setNameAndDate(name: string, date: string) {
+        if (name === '') {
+            name = 'Introduzca el nombre';
+        }
         this._pedidosService.setpedidoName(name);
         this._pedidosService.setPedidoDate(date);
     }

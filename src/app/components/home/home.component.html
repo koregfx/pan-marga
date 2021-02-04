@@ -1,7 +1,7 @@
 <div class="flexColum home-content">
     <h1>Pan Margarita</h1>
     <div class="flexColum">
-        <input type="text" [value]="this.nombre" #name>
+        <input type="text" [value]="this.nombre" onfocus="this.value=''" #name>
         <input type="text" [value]="this.fecha" onfocus="(this.type='date')" onblur="(this.type='text')" #date>
         <input [routerLink]="['/productos']" (click)="setNameAndDate(name.value, date.value)" type="submit"
             value="Confirmar">
