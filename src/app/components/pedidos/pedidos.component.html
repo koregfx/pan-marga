@@ -1,1 +1,51 @@
-<h1>PedidosComponent working</h1>
+
+<div class="pedidos_container">
+
+    
+    <div class="pedidos_header_container">
+        
+        <h1 class="pedidos_title">Pedidos</h1>
+        <div  class="pedidos_shearch_container">
+            <input type="text">
+            <Button class="pedidos_search">Buscar</Button>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <div *ngFor="let pedido of pedidos" class="pedido">
+        <div class="pedido_nombre">
+            <h3>{{ pedido.nombre }}</h3>
+            <br>
+            <h3>{{ pedido.fecha }}</h3>
+            <button (click)="deletePedido(pedido)"> Eliminar Pedido</button>
+        </div>
+        <table>
+            <tr>
+                <th><strong>Poroducto</strong></th>
+                <th><strong>Cantidad</strong></th>
+                <th><strong>Precio</strong></th>
+            </tr>
+            
+            <tr *ngFor="let item of pedido.pan">
+                <td>{{ item.tipo }} {{ item.masa }} <br> {{ item.peso }}g</td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.cantidad * item.precio }}€</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Total </strong></td>
+                <td></td>
+                <td>{{pedido.precioTotal}}€</td>
+            </tr>
+            
+        </table>
+    </div>
+    
+</div>

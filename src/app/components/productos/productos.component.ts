@@ -13,7 +13,6 @@ export class ProductosComponent {
     constructor(private _pedidosService: PedidosService) {
         this.pedido = _pedidosService.getPedidoActual();
         this.panes = _pedidosService.getPanes();
-        console.log(this.panes);
     }
 
     addPanToPedido(pan: Pan): void {

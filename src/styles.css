@@ -1,26 +1,25 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-
-.flexColum{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
+.flexColum {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
-.flex{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-li{
-    list-style: none;
+li {
+  list-style: none;
 }
 a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  text-decoration: none;
 }

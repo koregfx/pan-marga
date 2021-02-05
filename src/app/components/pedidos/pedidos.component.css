@@ -1,0 +1,29 @@
+.pedidos_container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.pedidos_header_container {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.pedidos_title {
+  flex: 2;
+  text-align: center;
+  margin-top: 20px;
+}
+.pedido {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10vh;
+}
+.pedido table {
+  width: 50vw;
+  text-align: center;
+}
