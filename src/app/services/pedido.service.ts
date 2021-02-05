@@ -191,7 +191,7 @@ export class PedidosService {
       this.pedidos = [];
     }
     this.pedidos.push(this.pedidoActual);
-    console.log(JSON.stringify(this.pedidoActual));
+    console.log(this.pedidos);
   }
   setPedidoDate(date: string): void {
     this.pedidoActual.fecha = date;
