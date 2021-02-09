@@ -4,10 +4,8 @@ import { NgModule } from '@angular/core';
 // Servicios
 import { PedidosService } from './services/pedido.service';
 
-
 // Routes
 import { app_routing } from './app.routes';
-
 
 // Components
 import { AppComponent } from './app.component';
@@ -17,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { PedidoActualComponent } from './components/pedidoActual/pedidoActual.component';
 import { PanComponent } from './components/shared/pan/pan.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,15 +25,10 @@ import { PanComponent } from './components/shared/pan/pan.component';
     HomeComponent,
     ProductosComponent,
     PedidoActualComponent,
-    PanComponent
+    PanComponent,
   ],
-  imports: [
-    BrowserModule,
-    app_routing
-  ],
-  providers: [
-    PedidosService
-  ],
-  bootstrap: [AppComponent]
+  imports: [BrowserModule, app_routing, HttpClientModule],
+  providers: [PedidosService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -18,9 +18,12 @@ export class PedidoActualComponent {
       sumatorio += item.cantidad * item.precio;
     }
     this.pedido.precioTotal = sumatorio;
-    this._pedidoService.sendPedido(this.pedido);
-    this.pedido = {};
-    this.router.navigate(['/pedidos']);
+    this._pedidoService.post('/pedido', this.pedido).subscribe((data) => {
+      this.pedido = {};
+      this._pedidoService.resetPedidoActual();
+      this.router.navigate(['/pedidos']);
+      console.log(data);
+    });
   }
   deleteItem(pan: Pan): void {
     this.pedido.pan.splice(this.pedido.pan.indexOf(pan), 1);

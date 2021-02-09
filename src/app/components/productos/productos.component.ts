@@ -39,6 +39,5 @@ export class ProductosComponent {
     } else {
       this.pedido.pan.push({ ...pan });
     }
-    console.log(this.pedido);
   }
 }

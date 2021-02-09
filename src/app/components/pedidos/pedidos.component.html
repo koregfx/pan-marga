@@ -5,9 +5,13 @@
     <div class="pedidos_header_container">
         
         <h1 class="pedidos_title">Pedidos</h1>
+        <input (click)="getPedidos()" type="submit"
+            value="todos">
+            <p> </p>
         <div  class="pedidos_shearch_container">
-            <input type="text">
-            <Button class="pedidos_search">Buscar</Button>
+            <input type="text" onfocus="(this.type='date')" [value]="this.fecha" onblur="(this.type='text')" #date>
+            <input (click)="buscarPorFecha(date.value)" type="submit"
+            value="buscar">
         </div>
     </div>
     
@@ -17,7 +21,8 @@
     
     <div *ngFor="let pedido of pedidos" class="pedido">
         <div class="pedido_nombre">
-            <h3>{{ pedido.nombre }}</h3>
+            <h3>{{ pedido.nombre }}   </h3>
+            <h3>id: {{pedido.pedidoId}}</h3>
             <br>
             <h3>{{ pedido.fecha }}</h3>
             <button (click)="deletePedido(pedido)"> Eliminar Pedido</button>

@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class PedidosService {
@@ -95,83 +97,26 @@ export class PedidosService {
       masa: 'bazo',
     },
   ];
-  private pedidos: Pedido[] = [
-    {
-      nombre: 'Adrian',
-      fecha: '2021-02-05',
-      pan: [
-        {
-          tipo: 'bocadillo',
-          peso: 120,
-          precio: 0.55,
-          cantidad: 2,
-          masa: 'viena',
-        },
-        {
-          tipo: 'bocadillo',
-          peso: 90,
-          precio: 0.45,
-          cantidad: 3,
-          masa: 'viena',
-        },
-        {
-          tipo: 'barra',
-          peso: 230,
-          precio: 0.75,
-          cantidad: 4,
-          masa: 'baguette',
-        },
-        {
-          tipo: 'barra',
-          peso: 200,
-          precio: 0.75,
-          cantidad: 2,
-          masa: 'integral',
-        },
-        {
-          tipo: 'barra',
-          peso: 300,
-          precio: 1,
-          cantidad: 5,
-          masa: 'candeal',
-        },
-      ],
-      precioTotal: 11.95,
-    },
-    {
-      nombre: 'Margarita',
-      fecha: '2021-02-05',
-      pan: [
-        {
-          tipo: 'bocadillo',
-          peso: 120,
-          precio: 0.55,
-          cantidad: 2,
-          masa: 'viena',
-        },
-        {
-          tipo: 'bocadillo',
-          peso: 90,
-          precio: 0.45,
-          cantidad: 1,
-          masa: 'viena',
-        },
-        {
-          tipo: 'barra',
-          peso: 230,
-          precio: 0.75,
-          cantidad: 1,
-          masa: 'baguette',
-        },
-      ],
-      precioTotal: 2.35,
-    },
-  ];
-
+  private url = 'https://pan-marga-api.herokuapp.com';
   private pedidoActual: Pedido = {};
-
-  constructor() {
+  private respuesta: any = {};
+  constructor(private http: HttpClient) {
     console.log('servicio de Pedidos listo para usar');
+    // this.post(`${this.url}/pedido`, this.pedidoActual).subscribe((resp) =>
+    // console.log(resp)
+    // );
+  }
+  get(url: string): any {
+    return this.http.get(`${this.url}${url}`);
+  }
+  getByDate(url: string, date: string): any {
+    return this.http.get(`${this.url}${url}/${date}`);
+  }
+  post(url: string, data: any): any {
+    return this.http.post(`${this.url}${url}`, data);
+  }
+  delete(url: string, data: Pedido): any {
+    return this.http.delete(`${this.url}${url}/${data._id}`);
   }
   getPanes(): Pan[] {
     return this.panes;
@@ -179,19 +124,11 @@ export class PedidosService {
   getPedidoActual(): Pedido {
     return this.pedidoActual;
   }
-  getPedidos(): Pedido[] {
-    return this.pedidos;
+  resetPedidoActual(): void {
+    this.pedidoActual = {};
   }
   setpedidoName(name: string): void {
     this.pedidoActual.nombre = name;
-  }
-  sendPedido(pedido: Pedido): void {
-    this.pedidoActual = pedido;
-    if (this.pedidos === undefined) {
-      this.pedidos = [];
-    }
-    this.pedidos.push(this.pedidoActual);
-    console.log(this.pedidos);
   }
   setPedidoDate(date: string): void {
     this.pedidoActual.fecha = date;
@@ -205,6 +142,8 @@ export interface Pedido {
   bollo?: any[];
   otros?: any[];
   precioTotal?: number;
+  pedidoId?: number;
+  _id?: number;
 }
 
 export interface Pan {
