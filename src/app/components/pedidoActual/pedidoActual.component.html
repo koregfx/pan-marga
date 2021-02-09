@@ -3,9 +3,9 @@
 
         <p>{{ pedido.nombre }}</p>
         <p>{{ pedido.fecha }}</p>
-        <div *ngFor="let item of this.pedido.pan" class="flex">
+        <div *ngFor="let item of this.pedido.productos" class="flex">
 
-            <p >{{item.cantidad}} {{item.tipo}} {{item.masa}} {{item.peso}}g
+            <p >{{item.cantidad}} {{item.nombre}}
                 {{item.precio *
                     item.cantidad}}€
             </p>

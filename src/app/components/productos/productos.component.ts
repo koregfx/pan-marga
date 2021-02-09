@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pan, Pedido, PedidosService } from '../../services/pedido.service';
+import {
+  Pedido,
+  PedidosService,
+  Producto,
+} from '../../services/pedido.service';
 
 @Component({
   selector: 'app-productos',
@@ -9,7 +13,7 @@ import { Pan, Pedido, PedidosService } from '../../services/pedido.service';
 })
 export class ProductosComponent {
   pedido: Pedido;
-  panes: Pan[];
+  panes: Producto[];
   constructor(private _pedidosService: PedidosService, private router: Router) {
     this.pedido = _pedidosService.getPedidoActual();
     this.panes = _pedidosService.getPanes();
@@ -21,23 +25,16 @@ export class ProductosComponent {
     }
   }
 
-  addPanToPedido(pan: Pan): void {
-    if (this.pedido.pan == undefined) {
-      this.pedido.pan = [];
+  addPanToPedido(pan: Producto): void {
+    if (this.pedido.productos == undefined) {
+      this.pedido.productos = [];
     }
-    if (
-      this.pedido.pan.some(
-        (e) => e.tipo === pan.tipo && e.masa === pan.masa && e.peso === pan.peso
-      )
-    ) {
-      this.pedido.pan[
-        this.pedido.pan.findIndex(
-          (e) =>
-            e.tipo === pan.tipo && e.masa === pan.masa && e.peso === pan.peso
-        )
+    if (this.pedido.productos.some((e) => e.nombre == pan.nombre)) {
+      this.pedido.productos[
+        this.pedido.productos.findIndex((e) => e.nombre == pan.nombre)
       ].cantidad = pan.cantidad;
     } else {
-      this.pedido.pan.push({ ...pan });
+      this.pedido.productos.push({ ...pan });
     }
   }
 }

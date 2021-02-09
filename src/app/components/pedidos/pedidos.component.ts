@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { Pedido, PedidosService } from '../../services/pedido.service';
+import {
+  Producto,
+  Pedido,
+  PedidosService,
+} from '../../services/pedido.service';
 import { formatDate } from '@angular/common';
 
 @Component({
@@ -10,6 +14,9 @@ import { formatDate } from '@angular/common';
 export class PedidosComponent {
   pedidos: Pedido[] = [];
   fecha: string;
+
+  conjunto: Producto[];
+  sumaTotal = 0;
 
   constructor(private _pedidosService: PedidosService) {
     this.getPedidos();
@@ -31,7 +38,22 @@ export class PedidosComponent {
     this._pedidosService.getByDate('/pedido', date).subscribe((pedidos) => {
       console.log(pedidos.pedidos);
       this.pedidos = pedidos.pedidos;
-      console.log(this.pedidos);
     });
+  }
+  getConjunto() {
+    this.conjunto = [];
+    this.pedidos.forEach((pedido) => {
+      pedido.productos.forEach((pan) => {
+        if (this.conjunto.some((e) => e.nombre == pan.nombre)) {
+          const index = this.conjunto.findIndex((e) => e.nombre == pan.nombre);
+          this.conjunto[index].cantidad += pan.cantidad;
+        } else {
+          this.conjunto.push({ ...pan });
+        }
+      });
+    });
+    this.conjunto.forEach(
+      (pan) => (this.sumaTotal += pan.cantidad * pan.precio)
+    );
   }
 }

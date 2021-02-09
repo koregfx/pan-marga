@@ -1,21 +1,18 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Pan } from 'src/app/services/pedido.service';
+import { Producto } from '../../../services/pedido.service';
 
 @Component({
   selector: 'app-pan',
   templateUrl: './pan.component.html',
-  styleUrls: ['./pan.component.css']
+  styleUrls: ['./pan.component.css'],
 })
 export class PanComponent {
-
-  @Input() pan: Pan;
-  @Output() panAñadido: EventEmitter<Pan>;
-
+  @Input() pan: Producto;
+  @Output() panAñadido: EventEmitter<Producto>;
 
   constructor() {
     this.panAñadido = new EventEmitter();
   }
-
 
   addCantidad(): void {
     this.pan.cantidad++;

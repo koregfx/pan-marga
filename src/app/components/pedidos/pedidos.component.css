@@ -23,7 +23,11 @@
   justify-content: space-around;
   margin: 10vh;
 }
-.pedido table {
+table {
   width: 50vw;
   text-align: center;
+}
+.tabla_conjunto {
+  width: 80%;
+  margin: auto;
 }

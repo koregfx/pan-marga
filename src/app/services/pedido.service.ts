@@ -4,97 +4,61 @@ import { map } from 'rxjs/operators';
 
 @Injectable()
 export class PedidosService {
-  private panes: Pan[] = [
+  private panes: Producto[] = [
     {
-      tipo: 'bocadillo',
-      peso: 90,
+      nombre: 'bocadillo pequeño',
       precio: 0.45,
       cantidad: 0,
-      masa: 'viena',
     },
     {
-      tipo: 'bocadillo',
-      peso: 120,
+      nombre: 'bocadillo grande',
       precio: 0.55,
       cantidad: 0,
-      masa: 'viena',
     },
     {
-      tipo: 'barra',
-      peso: 230,
+      nombre: 'candeal 230gr',
       precio: 0.75,
       cantidad: 0,
-      masa: 'viena',
     },
     {
-      tipo: 'barra',
-      peso: 230,
+      nombre: 'viena 230gr',
       precio: 0.75,
       cantidad: 0,
-      masa: 'candeal',
     },
     {
-      tipo: 'barra',
-      peso: 230,
+      nombre: 'baguette',
       precio: 0.75,
       cantidad: 0,
-      masa: 'baguette',
     },
     {
-      tipo: 'barra',
-      peso: 200,
+      nombre: 'integral 200gr',
       precio: 0.75,
       cantidad: 0,
-      masa: 'integral',
     },
     {
-      tipo: 'barra',
-      peso: 300,
-      precio: 1,
+      nombre: 'candeal 300gr',
+      precio: 1.0,
       cantidad: 0,
-      masa: 'candeal',
     },
     {
-      tipo: 'barra',
-      peso: 300,
-      precio: 1,
+      nombre: 'viena 300gr',
+      precio: 1.0,
       cantidad: 0,
-      masa: 'viena',
     },
     {
-      tipo: 'barra',
-      peso: 300,
-      precio: 1,
+      nombre: 'bazo 300gr',
+      precio: 1.0,
       cantidad: 0,
-      masa: 'bazo',
     },
     {
-      tipo: 'barra',
-      peso: 300,
-      precio: 1,
+      nombre: 'gallego 300gr',
+      precio: 1.0,
       cantidad: 0,
-      masa: 'gallego',
     },
     {
-      tipo: 'barra',
-      peso: 450,
+      nombre: 'candeal 450gr',
       precio: 1.3,
       cantidad: 0,
-      masa: 'candeal',
-    },
-    {
-      tipo: 'barra',
-      peso: 450,
-      precio: 1.3,
-      cantidad: 0,
-      masa: 'viena',
-    },
-    {
-      tipo: 'barra',
-      peso: 450,
-      precio: 1.3,
-      cantidad: 0,
-      masa: 'bazo',
     },
   ];
   private url = 'https://pan-marga-api.herokuapp.com';
@@ -118,7 +82,7 @@ export class PedidosService {
   delete(url: string, data: Pedido): any {
     return this.http.delete(`${this.url}${url}/${data._id}`);
   }
-  getPanes(): Pan[] {
+  getPanes(): Producto[] {
     return this.panes;
   }
   getPedidoActual(): Pedido {
@@ -138,18 +102,14 @@ export class PedidosService {
 export interface Pedido {
   nombre?: string;
   fecha?: string;
-  pan?: Pan[];
-  bollo?: any[];
-  otros?: any[];
+  productos?: Producto[];
   precioTotal?: number;
   pedidoId?: number;
   _id?: number;
 }
 
-export interface Pan {
-  tipo: string;
-  peso: number;
+export interface Producto {
+  nombre: string;
   precio: number;
-  masa: string;
   cantidad: number;
 }
