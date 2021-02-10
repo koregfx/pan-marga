@@ -21,7 +21,7 @@
     
     <div *ngFor="let pedido of pedidos" class="pedido">
         <div class="pedido_nombre">
-            <h3>{{ pedido.nombre }}   </h3>
+            <h3>{{ pedido.nombre }}</h3>
             <h3>id: {{pedido.pedidoId}}</h3>
             <br>
             <h3>{{ pedido.fecha }}</h3>
@@ -29,15 +29,15 @@
         </div>
         <table>
             <tr>
-                <th><strong>Poroducto</strong></th>
+                <th><strong>Producto</strong></th>
                 <th><strong>Cantidad</strong></th>
                 <th><strong>Precio</strong></th>
             </tr>
             
             <tr *ngFor="let item of pedido.productos">
-                <td>{{ item.nombre }} </td>
-                <td>{{ item.cantidad }}</td>
-                <td>{{ item.cantidad * item.precio }}€</td>
+                <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).nombre }}</td>
+                <td *ngIf="productById(item._id) != undefined">{{ item.cantidad }}</td>
+                <td *ngIf="productById(item._id) != undefined">{{ item.cantidad * productById(item._id).precio | number}}€</td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -47,25 +47,31 @@
             <tr>
                 <td><strong>Total </strong></td>
                 <td></td>
-                <td>{{pedido.precioTotal}}€</td>
+                <td>{{pedido.precioTotal | number}}€</td>
             </tr>
             
         </table>
     </div>
     <button (click)="getConjunto()" >Hacer conjunto</button>
     <div *ngIf="conjunto != undefined" class="tabla_conjunto">
-
         <table>
-            
             <tr>
-                <th><strong>Poroducto</strong></th>
+                <th><strong>Producto</strong></th>
                 <th><strong>Cantidad</strong></th>
-                <th><strong>Precio</strong></th>
+                <th><strong>Precio</strong></th>  
             </tr>
-            <tr *ngFor="let item of conjunto">
+            <tr>
+                <h3>Eutimio</h3>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr *ngFor="let item of eutimioConjunto">
                 <td>{{ item.nombre }} </td>
                 <td>{{ item.cantidad }}</td>
-                <td>{{ item.cantidad * item.precio }}€</td>
+                <td>{{ item.cantidad * item.precio | number }}€</td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -73,9 +79,42 @@
                 </td>
             </tr>
             <tr>
-                <td><strong>Total </strong></td>
+                <td><strong>Total Eutimio </strong></td>
                 <td></td>
-                <td>{{sumaTotal}}€</td>
+                <td>{{sumaTotalEutimio | number}}€</td>
+            </tr>
+            <tr>
+                <h3>Iryna</h3>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr *ngFor="let item of irynaConjunto">
+                <td>{{ item.nombre }} </td>
+                <td>{{ item.cantidad }}</td>
+                <td>{{ item.cantidad * item.precio | number}}€</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Total Iryna </strong></td>
+                <td></td>
+                <td>{{sumaTotalIryna | number}}€</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <hr>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>Total</strong></td>
+                <td></td>
+                <td>{{sumaTotal | number}}€</td>
             </tr>
         </table>
     </div>

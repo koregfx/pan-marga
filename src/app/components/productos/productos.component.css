@@ -1,39 +1,49 @@
-
-.organizacion{
-    background-color: green;
-    width: 70%;
-    height: 5vh;
-    border-radius: 10px;
-    margin:  auto;
-    margin-top: 10px;
-    justify-content: space-around ;
+.organizacion {
+  margin-top: 4vh;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.organizacion a{
-    cursor: pointer;
+.organizacion a {
+  cursor: pointer;
+  margin: 8px;
 }
 
-.main_container_pan{
-    width: 100%;
-    margin-top: 20px;
+.main_container_pan {
+  width: 100%;
+  padding-bottom: 20vh;
 }
-.pedidoActual_container{   
-    position: fixed;
-    right: 0;
-    max-height: 80%;
-    margin-top: 20vh;
-    background-color: blue;
-    color: white;
-}
-
-.products_panes{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 60%;
-    margin: auto;
+.pedidoActual_container {
+  position: fixed;
+  right: 0;
+  max-height: 80%;
+  margin-top: 20vh;
+  background-color: blue;
+  color: white;
 }
 
-.pan{
-    margin: 20px;
+.products_panes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 60%;
+  margin: auto;
+}
+.Arreglo {
+  padding-top: 27vh;
+}
+
+.pan {
+  margin: 20px;
+}
+.navbar_productos {
+  background-color: green;
+  position: fixed;
+  border-radius: 20px;
+  width: 70%;
+  height: 10vh;
+  top: 12vh;
+  left: 50%;
+  transform: translateX(-50%);
 }

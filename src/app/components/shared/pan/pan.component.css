@@ -1,25 +1,28 @@
-.pan_container{
-    background-color: goldenrod;
-    padding: 10px;
-    border-radius: 40px;
-    width: 10vw;
+.pan_container {
+  background-color: goldenrod;
+  padding: 10px;
+  border-radius: 40px;
+  width: 10vw;
 }
-.pan_peso{
-    text-align: center;
+.pan_peso {
+  text-align: center;
 }
-.pan_cantidad button{ 
-    border-style: none;
-    border-radius: 5px;
-    width: 30px;
+.pan_cantidad button {
+  border-style: none;
+  border-radius: 5px;
+  width: 30px;
 }
-.pan_cantidad_value{
-    width: 30px;
-    text-align: center;
+.pan_cantidad_value {
+  width: 30px;
+  text-align: center;
 }
-.pan_añadir{
-    border-style: none;
-    border-radius: 5px;
-    padding-top: 3px;
-    padding-left: 5px;
-    padding-right: 5px;
+.pan_añadir {
+  border-style: none;
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.pan_name {
+  text-align: center;
 }

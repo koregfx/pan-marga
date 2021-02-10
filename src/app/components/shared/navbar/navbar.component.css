@@ -1,13 +1,17 @@
-.link_Container{
-    width: 70%;
-    margin: auto;
-    height: 10vh;
-    margin-top: 1vh;
-    background-color: blue;
-    justify-content: space-around;
-    border-radius: 15px;
-    color: white;
+.link_Container {
+  position: fixed;
+  width: 70%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: auto;
+  height: 10vh;
+  margin-top: 1vh;
+  background-color: blue;
+  justify-content: space-around;
+  border-radius: 15px;
+  color: white;
 }
-.active a{
-    color: green;
+.active a {
+  color: green;
 }

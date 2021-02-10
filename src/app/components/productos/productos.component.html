@@ -1,14 +1,18 @@
-<div class="">
+<div class="navbar_productos">
     <ul class="flex organizacion">
         <li>
-            <a>Pan</a>
+            <a (click)="navigateToPanEutimio()">Pan Eutimio</a>
         </li>
         <li>
-            <a>Bolleria</a>
+            <a (click)="navigateToPanIryna()">Pan Irina</a>
         </li>
         <li>
-            <a>Otros</a>
+            <a (click)="navigateTobolloEutimio()">Bollos Eutimio</a>
         </li>
+        <li>
+            <a (click)="navigateTobolloIryna()">Bollos Irina</a>
+        </li>
+        
     </ul>
 </div>
 <app-pedido-actual [pedido]="this.pedido" class="pedidoActual_container"></app-pedido-actual>
@@ -16,9 +20,21 @@
 
 
 
-    <h1>Pan</h1>
+    <h1 class="Arreglo" id="panEutimio">Pan Eutimio</h1>
     <div class="products_panes">
-        <app-pan class="pan" *ngFor="let pan of panes" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
+        <app-pan class="pan" *ngFor="let pan of panEutimio" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
+    </div>
+    <h1 id="panIrina"class="Arreglo">Pan Iryna</h1>
+    <div class="products_panes">
+        <app-pan class="pan" *ngFor="let pan of panIryna" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
+    </div>
+    <h1 id="bolloEutimio"class="Arreglo">Bolleria Eutimio</h1>
+    <div class="products_panes">
+        <app-pan class="pan" *ngFor="let pan of bolleriaEutimio" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
+    </div>
+    <h1 id="bolloIryna"class="Arreglo">Bolleria Iryna</h1>
+    <div class="products_panes">
+        <app-pan class="pan" *ngFor="let pan of bolleriaIryna" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
     </div>
 
 </div>

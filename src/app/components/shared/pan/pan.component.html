@@ -1,6 +1,7 @@
 <div class="pan_container flexColum">
     <div class="pan_name">
         <p class="pan_tipo">{{pan.nombre}}</p>
+        <p class="pan_tipo">{{pan.precio}}€</p>
     </div>
     <div class="pan_cantidad">
         <div class="flex">
@@ -9,6 +10,6 @@
             <button (click)="lessCantidad()">-</button>
         </div>
     </div>
-    <button class="pan_añadir" (click)="addPan()">Añadir</button>
+    <button class="pan_añadir" (click)="addPan()">{{pan.precio * pan.cantidad | number}}</button>
 
 </div>

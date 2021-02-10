@@ -7,7 +7,7 @@
 
             <p >{{item.cantidad}} {{item.nombre}}
                 {{item.precio *
-                    item.cantidad}}€
+                    item.cantidad | number}}€
             </p>
             <button (click)="deleteItem(item)" class="button_pedido">-</button>
         </div>
