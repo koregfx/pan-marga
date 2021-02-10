@@ -52,6 +52,9 @@ export class PedidosComponent {
     this.conjunto = [];
     this.eutimioConjunto = [];
     this.irynaConjunto = [];
+    this.sumaTotal = 0;
+    this.sumaTotalEutimio = 0;
+    this.sumaTotalIryna = 0;
     this.pedidos.forEach((pedido) => {
       pedido.productos.forEach((producto) => {
         if (producto != undefined) {
