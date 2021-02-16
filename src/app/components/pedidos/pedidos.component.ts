@@ -32,7 +32,6 @@ export class PedidosComponent {
   getPedidos(): void {
     this._pedidosService.get('/pedido').subscribe((pedidos) => {
       this.pedidos = pedidos.pedidos;
-      console.log(this.pedidos);
     });
   }
   deletePedido(pedido: Pedido): void {
@@ -58,50 +57,52 @@ export class PedidosComponent {
     this.pedidos.forEach((pedido) => {
       pedido.productos.forEach((producto) => {
         if (producto != undefined) {
-          let product = this.productById(producto._id);
-          product.cantidad = producto.cantidad;
-          this.conjunto.push({ ...product });
-          switch (product.distribuidor) {
-            case 'Pan Eutimio':
-              if (this.eutimioConjunto.some((e) => e._id === product._id)) {
-                const index = this.eutimioConjunto.findIndex(
-                  (e) => e._id === product._id
-                );
-                this.eutimioConjunto[index].cantidad += product.cantidad;
-              } else {
-                this.eutimioConjunto.push({ ...product });
-              }
-              break;
-            case 'Pan Iryna':
-              if (this.irynaConjunto.some((e) => e._id === product._id)) {
-                const index = this.irynaConjunto.findIndex(
-                  (e) => e._id === product._id
-                );
-                this.irynaConjunto[index].cantidad += product.cantidad;
-              } else {
-                this.irynaConjunto.push({ ...product });
-              }
-              break;
-            case 'Bolleria Eutimio':
-              if (this.eutimioConjunto.some((e) => e._id === product._id)) {
-                const index = this.eutimioConjunto.findIndex(
-                  (e) => e._id === product._id
-                );
-                this.eutimioConjunto[index].cantidad += product.cantidad;
-              } else {
-                this.eutimioConjunto.push({ ...product });
-              }
-              break;
-            case 'Bolleria Iryna':
-              if (this.irynaConjunto.some((e) => e._id === product._id)) {
-                const index = this.irynaConjunto.findIndex(
-                  (e) => e._id === product._id
-                );
-                this.irynaConjunto[index].cantidad += product.cantidad;
-              } else {
-                this.irynaConjunto.push({ ...product });
-              }
-              break;
+          if (this.productById(producto._id) != undefined) {
+            let product = this.productById(producto._id);
+            product.cantidad = producto.cantidad;
+            this.conjunto.push({ ...product });
+            switch (product.distribuidor) {
+              case 'Pan Eutimio':
+                if (this.eutimioConjunto.some((e) => e._id === product._id)) {
+                  const index = this.eutimioConjunto.findIndex(
+                    (e) => e._id === product._id
+                  );
+                  this.eutimioConjunto[index].cantidad += product.cantidad;
+                } else {
+                  this.eutimioConjunto.push({ ...product });
+                }
+                break;
+              case 'Pan Iryna':
+                if (this.irynaConjunto.some((e) => e._id === product._id)) {
+                  const index = this.irynaConjunto.findIndex(
+                    (e) => e._id === product._id
+                  );
+                  this.irynaConjunto[index].cantidad += product.cantidad;
+                } else {
+                  this.irynaConjunto.push({ ...product });
+                }
+                break;
+              case 'Bolleria Eutimio':
+                if (this.eutimioConjunto.some((e) => e._id === product._id)) {
+                  const index = this.eutimioConjunto.findIndex(
+                    (e) => e._id === product._id
+                  );
+                  this.eutimioConjunto[index].cantidad += product.cantidad;
+                } else {
+                  this.eutimioConjunto.push({ ...product });
+                }
+                break;
+              case 'Bolleria Iryna':
+                if (this.irynaConjunto.some((e) => e._id === product._id)) {
+                  const index = this.irynaConjunto.findIndex(
+                    (e) => e._id === product._id
+                  );
+                  this.irynaConjunto[index].cantidad += product.cantidad;
+                } else {
+                  this.irynaConjunto.push({ ...product });
+                }
+                break;
+            }
           }
         }
       });
@@ -115,9 +116,6 @@ export class PedidosComponent {
     this.conjunto.forEach(
       (pan) => (this.sumaTotal += pan.cantidad * pan.precio)
     );
-    console.log(this.eutimioConjunto);
-    console.log(this.irynaConjunto);
-    console.log(this.conjunto);
   }
   productById(id: string): Producto {
     if (this.productos != undefined) {
