@@ -89,9 +89,9 @@ export class ProductosComponent {
     if (this.pedido.productos == undefined) {
       this.pedido.productos = [];
     }
-    if (this.pedido.productos.some((e) => e.nombre == pan.nombre)) {
+    if (this.pedido.productos.some((e) => e._id == pan._id)) {
       this.pedido.productos[
-        this.pedido.productos.findIndex((e) => e.nombre == pan.nombre)
+        this.pedido.productos.findIndex((e) => e._id == pan._id)
       ].cantidad = pan.cantidad;
     } else {
       this.pedido.productos.push({ ...pan });
