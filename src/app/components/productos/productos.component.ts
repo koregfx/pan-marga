@@ -28,7 +28,7 @@ export class ProductosComponent {
       this.bolleriaIryna = [];
       this.productos = data.productos;
       this.productos.forEach((e) => {
-        e.cantidad = 1;
+        e.cantidad = 0;
         switch (e.distribuidor) {
           case 'Pan Eutimio':
             this.panEutimio.push({ ...e });
@@ -53,7 +53,7 @@ export class ProductosComponent {
       this.router.navigate(['/home']);
     }
   }
-  navigateToPanEutimio() {
+  navigateToPanEutimio(): void {
     this.router
       .navigate(['productos'], { fragment: 'panEutimio' })
       .then((res) => {
@@ -61,7 +61,7 @@ export class ProductosComponent {
         if (testElement != undefined) testElement.scrollIntoView(true);
       });
   }
-  navigateToPanIryna() {
+  navigateToPanIryna(): void {
     this.router
       .navigate(['productos'], { fragment: 'panIrina' })
       .then((res) => {
@@ -69,7 +69,7 @@ export class ProductosComponent {
         if (testElement != undefined) testElement.scrollIntoView();
       });
   }
-  navigateTobolloEutimio() {
+  navigateTobolloEutimio(): void {
     this.router
       .navigate(['productos'], { fragment: 'bolloEutimio' })
       .then((res) => {
@@ -77,7 +77,7 @@ export class ProductosComponent {
         if (testElement != undefined) testElement.scrollIntoView();
       });
   }
-  navigateTobolloIryna() {
+  navigateTobolloIryna(): void {
     this.router
       .navigate(['productos'], { fragment: 'bolloIryna' })
       .then((res) => {

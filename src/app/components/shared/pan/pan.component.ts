@@ -20,6 +20,9 @@ export class PanComponent {
 
   lessCantidad(): void {
     this.pan.cantidad--;
+    if (this.pan.cantidad < 0) {
+      this.pan.cantidad = 0;
+    }
   }
 
   addPan(): void {

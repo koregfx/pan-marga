@@ -8,10 +8,25 @@
 .pedido input {
   width: 60%;
   margin-bottom: 2rem;
-  margin-left: 2rem;
 }
 .button_pedido {
-  border-style: none;
-  border-radius: 5px;
+  border-style: solid black;
+  border-radius: 15px;
   width: 30px;
+  margin-left: 5px;
+}
+.pedido {
+  border-radius: ;
+  overflow: hidden;
+  text-align: center;
+  background-color: #ffc15a;
+}
+.pedido p {
+  background-color: #ffc15a;
+}
+.Button {
+  background-color: #aeaeae;
+}
+.color {
+  background-color: #ffc15a;
 }

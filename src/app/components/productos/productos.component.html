@@ -1,18 +1,20 @@
 <div class="navbar_productos">
     <ul class="flex organizacion">
-        <li>
-            <a (click)="navigateToPanEutimio()">Pan Eutimio</a>
+        <li class="flex">
+                <p class="name_title">Eutimio</p>
+                <div class="flexColum">
+                    <a (click)="navigateToPanEutimio()">Pan</a>
+                    <a (click)="navigateTobolloEutimio()">Bollos </a>
+                </div>
+            
         </li>
-        <li>
-            <a (click)="navigateToPanIryna()">Pan Irina</a>
+        <li class="flex">
+            <p class="name_title">Irina</p>
+            <div class="flexColum">
+                <a (click)="navigateToPanIryna()">Pan</a>
+                <a (click)="navigateTobolloIryna()">Bollos</a>
+            </div>
         </li>
-        <li>
-            <a (click)="navigateTobolloEutimio()">Bollos Eutimio</a>
-        </li>
-        <li>
-            <a (click)="navigateTobolloIryna()">Bollos Irina</a>
-        </li>
-        
     </ul>
 </div>
 <app-pedido-actual [pedido]="this.pedido" class="pedidoActual_container"></app-pedido-actual>

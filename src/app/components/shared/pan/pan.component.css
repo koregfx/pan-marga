@@ -1,28 +1,58 @@
 .pan_container {
-  background-color: goldenrod;
-  padding: 10px;
-  border-radius: 40px;
-  width: 10vw;
+  background-color: #aeaeae;
+  border-radius: 7px;
+  min-width: 100px;
+  border: 3px solid;
+  overflow: hidden;
 }
 .pan_peso {
   text-align: center;
 }
-.pan_cantidad button {
-  border-style: none;
-  border-radius: 5px;
-  width: 30px;
+.pan_cantidad {
+  width: 100%;
 }
+
 .pan_cantidad_value {
-  width: 30px;
+  min-width: 30px;
   text-align: center;
+  border: 3px solid black;
+  border-left: none;
+  border-right: none;
+  background-color: #ffc15a;
 }
 .pan_añadir {
   border-style: none;
-  border-radius: 5px;
+  width: 100%;
   padding-top: 3px;
   padding-left: 5px;
   padding-right: 5px;
 }
+.pan_name p {
+  background-color: #ffc15a;
+}
 .pan_name {
+  background-color: #ffc15a;
   text-align: center;
+  word-wrap: normal;
+  padding: 10px;
+  width: 100%;
+}
+.flex_buttom {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+}
+.plus {
+  background-color: #aeaeae;
+  flex-grow: 1;
+  width: 100%;
+  border: 3px solid black;
+  border-left: none;
+}
+.minus {
+  background-color: #aeaeae;
+  flex-grow: 1;
+  width: 100%;
+  border: 3px solid black;
+  border-right: none;
 }

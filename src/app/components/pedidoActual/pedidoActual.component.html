@@ -3,15 +3,15 @@
 
         <p>{{ pedido.nombre }}</p>
         <p>{{ pedido.fecha }}</p>
-        <div *ngFor="let item of this.pedido.productos" class="flex">
+        <div *ngFor="let item of this.pedido.productos" class="flex color">
 
             <p >{{item.cantidad}} {{item.nombre}}
-                {{item.precio *
-                    item.cantidad | number}}€
+                          {{item.precio *
+                item.cantidad | number}}€
             </p>
             <button (click)="deleteItem(item)" class="button_pedido">-</button>
         </div>
     </div>
 
-    <input (click)="sendPedido()" type="submit" value="confirmar Pedido">
+    <input class="Button" (click)="sendPedido()" type="submit" value="confirmar Pedido">
 </div>

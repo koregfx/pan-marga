@@ -31,4 +31,12 @@ table {
 .tabla_conjunto {
   width: 80%;
   margin: auto;
+  transform: translateX(17%);
+}
+.submitButton {
+  background-color: #ffc15a;
+  border: none;
+}
+.sepparator {
+  width: 80%;
 }

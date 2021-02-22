@@ -16,6 +16,7 @@ import { ProductosComponent } from './components/productos/productos.component';
 import { PedidoActualComponent } from './components/pedidoActual/pedidoActual.component';
 import { PanComponent } from './components/shared/pan/pan.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthComponent } from './components/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductosComponent,
     PedidoActualComponent,
     PanComponent,
+    AuthComponent,
   ],
   imports: [BrowserModule, app_routing, HttpClientModule],
   providers: [PedidosService],

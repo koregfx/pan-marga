@@ -4,12 +4,19 @@
         <p class="pan_tipo">{{pan.precio}}€</p>
     </div>
     <div class="pan_cantidad">
-        <div class="flex">
-            <button (click)="addCantidad()">+</button>
+        <div class="flex_buttom">
+            <button class="plus" (click)="addCantidad()">+</button>
             <p class="pan_cantidad_value">{{pan.cantidad}}</p>
-            <button (click)="lessCantidad()">-</button>
+            <button class="minus" (click)="lessCantidad()">-</button>
         </div>
     </div>
-    <button class="pan_añadir" (click)="addPan()">{{pan.precio * pan.cantidad | number}}</button>
+    <button class="pan_añadir" (click)="addPan()">
+        <p>
+            Añadir
+        </p>
+        <!-- <p>
+            {{pan.precio * pan.cantidad | number}}
+        </p> -->
+    </button>
 
 </div>

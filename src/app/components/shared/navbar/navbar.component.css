@@ -4,14 +4,17 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  margin: auto;
   height: 10vh;
-  margin-top: 1vh;
-  background-color: blue;
+  padding-top: 1vh;
   justify-content: space-around;
   border-radius: 15px;
-  color: white;
+  color: black;
+}
+a {
+  color: black;
 }
 .active a {
-  color: green;
+  border-bottom-color: #ffc15a;
+  border-bottom-style: solid;
+  padding-bottom: 5px;
 }

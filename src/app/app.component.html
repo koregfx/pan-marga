@@ -1,4 +1,10 @@
+
+<div *ngIf="pass === contra">
 <app-navbar></app-navbar>
-<div class="main-content">
-  <router-outlet></router-outlet>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="main-content" *ngIf="pass != contra">
+  <app-auth (password)="passAdd( $event )"></app-auth>
 </div>
