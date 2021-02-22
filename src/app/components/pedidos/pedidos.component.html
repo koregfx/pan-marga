@@ -97,41 +97,49 @@
         <br>
     </div>  
     
-    <div *ngFor="let pedido of pedidos" class="pedido">
-        <div class="pedido_nombre">
-            <h3>{{ pedido.nombre }}</h3>
-            <h3>id: {{pedido.pedidoId}}</h3>
-            <br>
-            <h3>{{ pedido.fecha }}</h3>
-            <input class="submitButton" (click)="deletePedido(pedido)" value=" Eliminar Pedido" type="submit">
+    <div *ngFor="let pedido of pedidos" >
+        <div class="pedido">
+            
+            <div class="pedido_nombre">
+                <h4>{{ pedido.nombre }}</h4>
+                <h4>id: {{pedido.pedidoId}}</h4>
+                <br>
+                <h4>{{ pedido.fecha }}</h4>
+                <input class="submitButton" (click)="deletePedido(pedido)" value=" Eliminar Pedido" type="submit">
+            </div>
+            <table>
+                <tr>
+                    <th><strong>Producto</strong></th>
+                    <th><strong>Precio Unidad</strong></th>
+                    <th><strong>Cantidad</strong></th>
+                    <th><strong>Precio</strong></th>
+                </tr>
+                
+                <tr *ngFor="let item of pedido.productos">
+                    <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).nombre }}</td>
+                    <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).precio }}</td>
+                    <td *ngIf="productById(item._id) != undefined">{{ item.cantidad }}</td>
+                    <td *ngIf="productById(item._id) != undefined">{{ item.cantidad * productById(item._id).precio | number}}€</td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Total </strong></td>
+                    <td></td>
+                    <td></td>
+                    <td>{{pedido.precioTotal | number}}€</td>
+                </tr>
+                
+            </table>
         </div>
-        <table>
-            <tr>
-                <th><strong>Producto</strong></th>
-                <th><strong>Precio Unidad</strong></th>
-                <th><strong>Cantidad</strong></th>
-                <th><strong>Precio</strong></th>
-            </tr>
-            
-            <tr *ngFor="let item of pedido.productos">
-                <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).nombre }}</td>
-                <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).precio }}</td>
-                <td *ngIf="productById(item._id) != undefined">{{ item.cantidad }}</td>
-                <td *ngIf="productById(item._id) != undefined">{{ item.cantidad * productById(item._id).precio | number}}€</td>
-            </tr>
-            <tr>
-                <td colspan="4">
-                    <hr>
-                </td>
-            </tr>
-            <tr>
-                <td><strong>Total </strong></td>
-                <td></td>
-                <td></td>
-                <td>{{pedido.precioTotal | number}}€</td>
-            </tr>
-            
-        </table>
+        <div class="sepparator">
+            <br>
+            <hr>
+            <br>
+        </div>  
     </div>
     
 </div>
