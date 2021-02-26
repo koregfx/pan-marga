@@ -1,3 +1,4 @@
+import { NewproductComponent } from './components/shared/newproduct/newproduct.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -17,6 +18,8 @@ import { PedidoActualComponent } from './components/pedidoActual/pedidoActual.co
 import { PanComponent } from './components/shared/pan/pan.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './components/auth/auth.component';
+import { EditproductComponent } from './components/shared/editproduct/editproduct.component';
+import { ProducviewportComponent } from './components/producviewport/producviewport.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { AuthComponent } from './components/auth/auth.component';
     PedidoActualComponent,
     PanComponent,
     AuthComponent,
+    EditproductComponent,
+    NewproductComponent,
+    ProducviewportComponent,
   ],
   imports: [BrowserModule, app_routing, HttpClientModule],
   providers: [PedidosService],

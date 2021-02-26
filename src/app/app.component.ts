@@ -9,7 +9,9 @@ export class AppComponent {
   title = 'pan-marga';
   pass = 'pan';
   contra: string;
-  constructor() {}
+  constructor(){
+    ;
+  }
   passAdd(contra: string): void {
     this.contra = contra;
   }

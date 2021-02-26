@@ -6,7 +6,7 @@
                     <a (click)="navigateToPanEutimio()">Pan</a>
                     <a (click)="navigateTobolloEutimio()">Bollos </a>
                 </div>
-            
+
         </li>
         <li class="flex">
             <p class="name_title">Irina</p>
@@ -15,9 +15,13 @@
                 <a (click)="navigateTobolloIryna()">Bollos</a>
             </div>
         </li>
+        <li>
+          <a (click)="navigateToOtros()">Otros</a>
+        </li>
     </ul>
 </div>
 <app-pedido-actual [pedido]="this.pedido" class="pedidoActual_container"></app-pedido-actual>
+<input class="confirmButton Botton_Edit"  type="submit" (click)="NavigateToCHanges()" value="Editar Productos">
 <div class="main_container_pan flexColum">
 
 
@@ -37,6 +41,10 @@
     <h1 id="bolloIryna"class="Arreglo">Bolleria Iryna</h1>
     <div class="products_panes">
         <app-pan class="pan" *ngFor="let pan of bolleriaIryna" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
+    </div>
+    <h1 id="Otros"class="Arreglo">Otros</h1>
+    <div class="products_panes">
+        <app-pan class="pan" *ngFor="let pan of otros" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
     </div>
 
 </div>

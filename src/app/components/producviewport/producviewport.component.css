@@ -32,9 +32,6 @@
   width: 60%;
   margin: auto;
 }
-.Arreglo {
-  padding-top: 27vh;
-}
 
 .pan {
   margin: 20px;
@@ -46,6 +43,7 @@
   height: 10vh;
   top: 10vh;
   left: 50%;
+  z-index: 99;
   transform: translateX(-50%);
 }
 .name_title {
@@ -55,9 +53,12 @@
   padding-bottom: 15px;
   padding-right: 5px;
 }
-.Botton_Edit{
-  position: fixed;
-  left: 10px;
-  top: 30px;
-  background-color: #ffc15a;
+.addProduct_container input{
+  text-transform: capitalize;
+  padding: 10px;
+}
+
+.Arreglo{
+
+  padding-top: 27vh;
 }

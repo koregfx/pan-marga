@@ -1,18 +1,14 @@
-import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {
-  Pedido,
-  PedidosService,
-  Producto,
-} from '../../services/pedido.service';
+import { Producto, PedidosService } from './../../services/pedido.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-productos',
-  templateUrl: 'productos.component.html',
-  styleUrls: ['productos.component.css'],
+  selector: 'app-producviewport',
+  templateUrl: './producviewport.component.html',
+  styleUrls: ['./producviewport.component.css']
 })
-export class ProductosComponent {
-  pedido: Pedido;
+export class ProducviewportComponent implements OnInit {
+
   productos: Producto[];
   panEutimio: Producto[] = [];
   panIryna: Producto[] = [];
@@ -22,19 +18,11 @@ export class ProductosComponent {
 
   constructor(private _pedidosService: PedidosService, private router: Router) {
     this.Update();
-    if (this.pedido == undefined) {
-      this.router.navigate(['/home']);
-    }
-    if (this.pedido.nombre == undefined) {
-      this.router.navigate(['/home']);
-    }
-  }
-  NavigateToCHanges():void {
-    this.router.navigate(['productviewport']);
+
   }
   navigateToPanEutimio(): void {
     this.router
-      .navigate(['productos'], { fragment: 'panEutimio' })
+      .navigate(['productviewport'], { fragment: 'panEutimio' })
       .then((res) => {
         let testElement = document.getElementById('panEutimio');
         if (testElement != undefined) testElement.scrollIntoView(true);
@@ -42,7 +30,7 @@ export class ProductosComponent {
   }
   navigateToPanIryna(): void {
     this.router
-      .navigate(['productos'], { fragment: 'panIrina' })
+      .navigate(['productviewport'], { fragment: 'panIrina' })
       .then((res) => {
         let testElement = document.getElementById('panIrina');
         if (testElement != undefined) testElement.scrollIntoView();
@@ -50,7 +38,7 @@ export class ProductosComponent {
   }
   navigateTobolloEutimio(): void {
     this.router
-      .navigate(['productos'], { fragment: 'bolloEutimio' })
+      .navigate(['productviewport'], { fragment: 'bolloEutimio' })
       .then((res) => {
         let testElement = document.getElementById('bolloEutimio');
         if (testElement != undefined) testElement.scrollIntoView();
@@ -58,7 +46,7 @@ export class ProductosComponent {
   }
   navigateTobolloIryna(): void {
     this.router
-      .navigate(['productos'], { fragment: 'bolloIryna' })
+      .navigate(['productviewport'], { fragment: 'bolloIryna' })
       .then((res) => {
         let testElement = document.getElementById('bolloIryna');
         if (testElement != undefined) testElement.scrollIntoView();
@@ -66,27 +54,13 @@ export class ProductosComponent {
   }
   navigateToOtros(): void {
     this.router
-      .navigate(['productos'], { fragment: 'Otros' })
+      .navigate(['productviewport'], { fragment: 'Otros' })
       .then((res) => {
         let testElement = document.getElementById('Otros');
         if (testElement != undefined) testElement.scrollIntoView();
       });
   }
-  addPanToPedido(pan: Producto): void {
-    if (this.pedido.productos == undefined) {
-      this.pedido.productos = [];
-    }
-    if (this.pedido.productos.some((e) => e._id == pan._id)) {
-      this.pedido.productos[
-        this.pedido.productos.findIndex((e) => e._id == pan._id)
-      ].cantidad = pan.cantidad;
-    } else {
-      this.pedido.productos.push({ ...pan });
-    }
-  }
-  Update()
-  {
-    this.pedido = this._pedidosService.getPedidoActual();
+  Update(){
     this._pedidosService.getProductos().subscribe((data) => {
       this.panEutimio = [];
       this.panIryna = [];
@@ -100,21 +74,24 @@ export class ProductosComponent {
           case 'Pan Eutimio':
             this.panEutimio.push({ ...e });
             break;
-            case 'Pan Iryna':
-              this.panIryna.push({ ...e });
-              break;
-              case 'Bolleria Eutimio':
-                this.bolleriaEutimio.push({ ...e });
-                break;
-                case 'Bolleria Iryna':
-                  this.bolleriaIryna.push({ ...e });
-                  break;
-                  case 'Otros':
-                    this.otros.push({ ...e });
-                    break;
+          case 'Pan Iryna':
+            this.panIryna.push({ ...e });
+            break;
+          case 'Bolleria Eutimio':
+            this.bolleriaEutimio.push({ ...e });
+            break;
+          case 'Bolleria Iryna':
+            this.bolleriaIryna.push({ ...e });
+            break;
+          case 'Otros':
+            this.otros.push({ ...e });
+            break;
         }
         const conjunto = {};
       });
     });
   }
+  ngOnInit(): void {
+  }
+
 }

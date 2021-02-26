@@ -1,0 +1,14 @@
+<div class="editor_container">
+  <input class="input_editor First" type="text/css" [value]="this.product.nombre" #name>
+  <p class="titulito">Precio</p>
+  <input class="input_editor"type="number" [value]="this.product.precio" #price>
+  <p class="titulito">Distribuidor</p>
+  <select name="distribuidor" #distribuidor>
+    <option value="Pan Eutimio">Pan Eutimio</option>
+    <option value="Bolleria Eutimio">Bolleria Eutimio</option>
+    <option value="Pan Iryna">Pan Iryna</option>
+    <option value="Bolleria Iryna">Bolleria Iryna</option>
+    <option value="Otros">Otros</option>
+  </select>
+  <input class="confirmButton"  type="submit" (click)="postChanges(name.value,price.value,distribuidor.value)" value="Añadir Producto">
+</div>

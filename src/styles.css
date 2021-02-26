@@ -32,6 +32,24 @@ input {
   border-radius: 6px;
   margin-bottom: 10px;
 }
+select {
+  -webkit-appearance: none;
+  padding: 5px;
+  box-shadow: none;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #e6e1e1;
+}
+option {
+  -webkit-appearance: none;
+  padding: 5px;
+  box-shadow: none;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  background-color: #e6e1e1;
+}
 
 .submitButton {
   background-color: #ffc15a;
