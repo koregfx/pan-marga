@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { Producto, PedidosService } from '../../../services/pedido.service';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
@@ -27,7 +28,11 @@ export class NewproductComponent implements OnInit {
     }
     this._pedidoservice.postProducto(productChanges)
       .subscribe(data => {
-        console.log(data);
+        Swal.fire({
+          title: 'Producto añadido',
+          background:'#aeaeae'
+
+          })
         this.Update();
       });
   }

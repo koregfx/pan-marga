@@ -23,7 +23,11 @@ export class EditproductComponent implements OnInit {
     }
     this._pedidoservice.changeProducto(this.product._id,productChanges)
       .subscribe(data => {
-        console.log(data);
+        Swal.fire({
+        title: 'Cambio Realizado',
+        background:'#aeaeae'
+
+        })
         this.Update();
       });
 
@@ -40,14 +44,12 @@ export class EditproductComponent implements OnInit {
       confirmButtonText: 'Confirmar',
       cancelButtonText: 'Cancelar',
       background:'#aeaeae',
-
     }
     ).then(resp=>{
       if(resp.isConfirmed)
       {
         this._pedidoservice.deleteProducto(this.product._id)
         .subscribe(data => {
-          console.log(data);
           this.Update();
         });
 
