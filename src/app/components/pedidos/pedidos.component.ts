@@ -1,3 +1,4 @@
+import  Swal  from 'sweetalert2';
 import { Component } from '@angular/core';
 import {
   Producto,
