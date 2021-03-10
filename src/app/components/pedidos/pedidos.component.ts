@@ -19,9 +19,11 @@ export class PedidosComponent {
   conjunto: Producto[];
   eutimioConjunto: Producto[];
   irynaConjunto: Producto[];
+  otrosConjunto: Producto[];
   sumaTotal = 0;
   sumaTotalEutimio = 0;
   sumaTotalIryna = 0;
+  sumaTotalOtros =0;
 
   constructor(private _pedidosService: PedidosService) {
     this.getPedidos();
@@ -68,9 +70,11 @@ export class PedidosComponent {
     this.conjunto = [];
     this.eutimioConjunto = [];
     this.irynaConjunto = [];
+    this.otrosConjunto = [];
     this.sumaTotal = 0;
     this.sumaTotalEutimio = 0;
     this.sumaTotalIryna = 0;
+    this.sumaTotalOtros = 0;
     this.pedidos.forEach((pedido) => {
       pedido.productos.forEach((producto) => {
         if (producto != undefined) {
@@ -119,16 +123,32 @@ export class PedidosComponent {
                   this.irynaConjunto.push({ ...product });
                 }
                 break;
+              case 'Otros':
+                if (this.otrosConjunto.some((e) => e._id === product._id)) {
+                  const index = this.otrosConjunto.findIndex(
+                    (e) => e._id === product._id
+                  );
+                  this.otrosConjunto[index].cantidad += product.cantidad;
+                } else {
+                  this.otrosConjunto.push({ ...product });
+                }
+                break;
             }
           }
         }
       });
     });
+    this.irynaConjunto.sort((a,b)=> a.precio - b.precio);
+    this.eutimioConjunto.sort((a,b)=> a.precio - b.precio);
+    this.otrosConjunto.sort((a,b)=> a.precio - b.precio);
     this.eutimioConjunto.forEach(
       (pan) => (this.sumaTotalEutimio += pan.cantidad * pan.precio)
     );
     this.irynaConjunto.forEach(
       (pan) => (this.sumaTotalIryna += pan.cantidad * pan.precio)
+    );
+    this.otrosConjunto.forEach(
+      (pan) => (this.sumaTotalOtros += pan.cantidad * pan.precio)
     );
     this.conjunto.forEach(
       (pan) => (this.sumaTotal += pan.cantidad * pan.precio)
