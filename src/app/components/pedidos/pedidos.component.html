@@ -34,7 +34,7 @@
                 </td>
             </tr>
             <tr *ngFor="let item of eutimioConjunto">
-                <td>{{ item.nombre }} </td>
+                <td class="text_td">{{ item.nombre }} </td>
                 <td>{{ item.precio }} </td>
                 <td>{{ item.cantidad }}</td>
                 <td>{{ item.cantidad * item.precio | number }}€</td>
@@ -59,7 +59,7 @@
                 </td>
             </tr>
             <tr *ngFor="let item of irynaConjunto">
-                <td>{{ item.nombre }} </td>
+                <td class="text_td">{{ item.nombre }} </td>
                 <td>{{ item.precio }} </td>
                 <td>{{ item.cantidad }}</td>
                 <td>{{ item.cantidad * item.precio | number}}€</td>
@@ -87,7 +87,7 @@
                 <td></td>
             </tr>
             <tr *ngFor="let item of otrosConjunto">
-                <td>{{ item.nombre }} </td>
+                <td class="text_td">{{ item.nombre }} </td>
                 <td>{{ item.precio }} </td>
                 <td>{{ item.cantidad }}</td>
                 <td>{{ item.cantidad * item.precio | number}}€</td>
@@ -144,7 +144,7 @@
                 </tr>
 
                 <tr *ngFor="let item of pedido.productos">
-                    <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).nombre }}</td>
+                    <td *ngIf="productById(item._id) != undefined" class="text_td">{{ productById(item._id).nombre }}</td>
                     <td *ngIf="productById(item._id) != undefined">{{ productById(item._id).precio }}</td>
                     <td *ngIf="productById(item._id) != undefined">{{ item.cantidad }}</td>
                     <td *ngIf="productById(item._id) != undefined">{{ item.cantidad * productById(item._id).precio | number}}€</td>

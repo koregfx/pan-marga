@@ -39,3 +39,7 @@ table {
 .sepparator {
   width: 80%;
 }
+.text_td{
+  text-align: left;
+  transform: translateX(40px);
+}
