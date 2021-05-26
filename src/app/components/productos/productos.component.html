@@ -4,7 +4,7 @@
                 <p class="name_title">Antonio</p>
                 <div class="flexColum">
                     <a (click)="navigateToPanEutimio()">Pan</a>
-                    <a (click)="navigateTobolloEutimio()">Lim </a>
+                    <a (click)="navigateTobolloEutimio()">Fruta</a>
                 </div>
 
         </li>
@@ -34,7 +34,7 @@
     <div class="products_panes">
         <app-pan class="pan" *ngFor="let pan of panIryna" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
     </div>
-    <h1 id="bolloEutimio"class="Arreglo">Bolleria Eutimio</h1>
+    <h1 id="bolloEutimio"class="Arreglo">Fruta</h1>
     <div class="products_panes">
         <app-pan class="pan" *ngFor="let pan of bolleriaEutimio" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
     </div>
