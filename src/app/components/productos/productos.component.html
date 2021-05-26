@@ -1,10 +1,10 @@
-<div class="navbar_productos">
+  <div class="navbar_productos">
     <ul class="flex organizacion">
         <li class="flex">
-                <p class="name_title">Eutimio</p>
+                <p class="name_title">Antonio</p>
                 <div class="flexColum">
                     <a (click)="navigateToPanEutimio()">Pan</a>
-                    <a (click)="navigateTobolloEutimio()">Bollos </a>
+                    <a (click)="navigateTobolloEutimio()">Lim </a>
                 </div>
 
         </li>
@@ -26,7 +26,7 @@
 
 
 
-    <h1 class="Arreglo" id="panEutimio">Pan Eutimio</h1>
+    <h1 class="Arreglo" id="panEutimio">Pan Antonio</h1>
     <div class="products_panes">
         <app-pan class="pan" *ngFor="let pan of panEutimio" [pan]="pan" (panAñadido)="addPanToPedido( $event )"></app-pan>
     </div>

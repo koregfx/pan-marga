@@ -1,7 +1,7 @@
 <div class="navbar_productos">
   <ul class="flex organizacion">
       <li class="flex">
-              <p class="name_title">Eutimio</p>
+              <p class="name_title">Antonio</p>
               <div class="flexColum">
                   <a (click)="navigateToPanEutimio()">Pan</a>
                   <a (click)="navigateTobolloEutimio()">Bollos </a>
@@ -25,7 +25,7 @@
   <div class="addProduct_container Arreglo">
     <app-newproduct class="pan" (Change)="Update()"></app-newproduct>
   </div>
-  <h1  id="panEutimio" class="Arreglo">Pan Eutimio</h1>
+  <h1  id="panEutimio" class="Arreglo">Pan Antonio</h1>
   <div class="products_panes">
     <app-editproduct class="pan" *ngFor="let pan of panEutimio"  (Change)="Update()" [product]="pan"></app-editproduct>
   </div>
@@ -33,7 +33,7 @@
   <div class="products_panes">
       <app-editproduct class="pan" *ngFor="let pan of panIryna" (Change)="Update()" [product]="pan" ></app-editproduct>
   </div>
-  <h1 id="bolloEutimio"class="Arreglo">Bolleria Eutimio</h1>
+  <h1 id="bolloEutimio"class="Arreglo">Bolleria Antonio</h1>
   <div class="products_panes">
       <app-editproduct class="pan" *ngFor="let pan of bolleriaEutimio" (Change)="Update()" [product]="pan" ></app-editproduct>
   </div>
